@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+<p>For more info please see <a target="_blank" href="https://github.com/EasyCorp/EasyAdminBundle/pull/5495">#PR 5495</a></p>
+
+<pre>
+
+    public function __construct(
+        private SessionSelectedColumnStorageProvider $sessionSelectedColumnStorageProvider
+    ) {}
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->enableColumnChooser()
+            ->setColumnChooserSelectedColumnStorageProvider($this->sessionSelectedColumnStorageProvider)
+            ->setColumnChooserColumns(
+                ['id', 'title'],
+                ['content', 'description'], 
+                ['updatedAt']
+            )
+        ;
+    }
+
+</pre>
+
+{% endblock %}

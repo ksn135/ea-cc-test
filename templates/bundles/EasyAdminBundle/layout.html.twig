@@ -1,0 +1,7 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{#% block body_attr %}
+{{ stimulus_controller('symfony/ux-swup/swup', { 
+    containers: ['section.main-content'] 
+}) }}
+{% endblock body_attr %#}

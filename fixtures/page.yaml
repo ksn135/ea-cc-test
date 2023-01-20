@@ -1,0 +1,7 @@
+App\Entity\Page:
+    page{1..20}:
+        title: '<text(20)>'
+        description: '<realText(100)>'
+        content: '<realText(400)>'
+        createdAt: '<dateTimeBetween("-200 days", "now")>'
+        updatedAt: '<dateTimeBetween($createdAt, "now")>'
